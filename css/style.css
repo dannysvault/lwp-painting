@@ -90,7 +90,7 @@ nav .btn-quote:hover {
 #hero {
     padding: 160px 20px;
     text-align: center;
-    background: linear-gradient(rgba(11, 27, 61, 0.88), rgba(11, 27, 61, 0.96)), url('../images/hero-bg.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(11, 27, 61, 0.88), rgba(11, 27, 61, 0.96)), url('images/hero-bg.jpg') no-repeat center center/cover;
     color: #ffffff;
     max-width: 100%;
 }
