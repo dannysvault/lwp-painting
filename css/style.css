@@ -356,32 +356,36 @@ footer {
 /* --- 9. DEFENSIVE MOBILE OPTIMIZATION OVERRIDES --- */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px;
-        text-align: center;
+        flex-direction: row; /* Keeps things on one horizontal line instead of stacking */
+        justify-content: space-between;
+        padding: 15px 20px;
+        position: sticky; /* Keeps it sticky but now it's ultra-slim */
+    }
+
+    .logo {
+        font-size: 1.1rem; /* Slightly smaller text so it fits comfortably */
+        max-width: 60%;
     }
 
     nav {
-        flex-direction: column;
-        gap: 12px;
-        width: 100%;
+        flex-direction: row; /* Horizontal alignment */
+        gap: 0;
+        width: auto;
     }
 
-    nav a {
-        padding: 4px 0;
-        font-size: 1.1rem; /* Easier to tap with thumbs */
+    /* Hide the text links on mobile so they don't clog up the screen */
+    nav a:not(.nav-phone) {
+        display: none;
     }
 
+    /* Highlight the phone number as a clean, tappable action button on the right */
     .nav-phone {
-        font-size: 1.2rem !important;
-        margin: 5px 0;
-    }
-
-    nav .btn-quote {
-        width: 100%;
-        max-width: 280px;
-        text-align: center;
+        font-size: 1rem !important;
+        background: #0B1B3D;
+        color: #ffffff !important;
+        padding: 8px 14px;
+        border-radius: 6px;
+        margin: 0;
     }
 
     #hero {
@@ -406,18 +410,18 @@ footer {
     }
 
     .services-grid {
-        grid-template-columns: 1fr; /* Stacks cards cleanly on phone screens */
+        grid-template-columns: 1fr;
         gap: 20px;
     }
 
     .project-media {
-        grid-template-columns: 1fr; /* Stacks before/after images natively */
+        grid-template-columns: 1fr;
         gap: 15px;
     }
 
     .media-box img, 
     .media-box video {
-        height: 320px; /* Scales down heights so users aren't scrolling forever */
+        height: 320px;
     }
 
     .form-container {
@@ -425,7 +429,7 @@ footer {
     }
 
     .footer-socials {
-        flex-direction: column; /* Prevents text truncation or button overlaps */
+        flex-direction: column;
         width: 100%;
         gap: 15px;
     }
