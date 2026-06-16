@@ -183,6 +183,24 @@
         </div>
         <p>&copy; 2026 LWP Painting & Decorating. All rights reserved.</p>
     </footer>
+<!-- Smart Sticky Header Script -->
+    <script>
+        let lastScrollTop = 0;
+        const header = document.querySelector('header');
 
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // If scrolling down, hide the header. If scrolling up, show it.
+            if (scrollTop > lastScrollTop && scrollTop > 80) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
+
+</body>
 </body>
 </html>

@@ -32,17 +32,18 @@ h2 {
     letter-spacing: -0.5px;
 }
 
-/* --- 2. HEADER & NAVIGATION (DESKTOP) --- */
+/* --- 2. HEADER & NAVIGATION --- */
 header {
     background: #ffffff;
     padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
+    position: sticky;       /* Kept sticky for all screen sizes */
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 20px rgba(11, 27, 61, 0.05);
+    transition: transform 0.3s ease-in-out; /* Makes it slide up/down smoothly */
 }
 
 .logo {
@@ -359,7 +360,8 @@ footer {
         flex-direction: column;
         gap: 20px;
         padding: 20px;
-        position: relative; /* Reverts it to normal scrolling, not sticky */
+        position: sticky;   /* Keeps it sticky on mobile so the script can control it */
+        top: 0;
     }
     nav {
         flex-wrap: wrap;
